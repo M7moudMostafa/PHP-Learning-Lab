@@ -358,3 +358,167 @@ print_r(["FrontEnd" => [
 "Github",
 "Testing" => ["Unit Testing", "End To End", "Integration"]]);
 ?>
+
+<?php
+/*
+========================================================
+  Assignment 10
+========================================================
+🎯 Task:
+You have the following code that contains a complete page.
+Use what you have learned about variables so that we can 
+easily change the sentence "Elzero Courses" in the future.
+========================================================
+*/
+?>
+
+<?php $title = "Elzero Courses" ?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?= $title ?>">
+    <title>Welcome To <?= $title ?></title>
+  </head>
+  <body>
+    <h1><?= $title ?></h1>
+    <p>Here In <?= $title ?> We Provide Front-End And Back-End Courses</p>
+    <hr>
+    <div><?= $title ?> Is The What You Need.</div>
+    <footer>All Right Reserved To <?= $title ?></footer>
+  </body>
+</html>
+
+<?php
+/*
+========================================================
+  Assignment 11
+========================================================
+🎯 Task:
+You have the following code that contains two variables.
+
+✅ Requirement:
+Print the word "Web" using **five different methods** based on what you’ve learned so far.
+
+❗ Rules:
+- Use only the **echo** statement for all five methods.
+- Each method must produce the word "Web".
+
+========================================================
+*/
+
+$name = "elzero";
+$$name = "Web";
+
+echo $$name;
+echo "<br>";
+echo $elzero;
+echo "<br>";
+echo ${$name};
+echo "<br>";
+echo "${'elzero'}";
+echo "<br>";
+echo (string) $elzero;
+echo "<br>";
+
+?>
+
+<?php
+/*
+========================================================
+  Assignment 12
+========================================================
+🎯 Task:
+You have the following code.
+
+❓ How can you make the value of the variable $b equal to 100  
+   without modifying the values of the variables 100 or 200?
+
+❗ Rules:
+- Do NOT change the values 100 or 200 directly.
+
+$a = 200;
+$b = $a;
+$a = 100;
+
+echo $b; // 100
+========================================================
+*/
+
+$a = 200;
+$b = &$a;
+$a = 100;
+
+echo $b;
+?>
+
+<?php 
+/*
+========================================================
+  Assignment 13
+========================================================
+🎯 Task:
+Use Predefined Variables to print the following values:
+
+1️⃣ First line: Document Root  
+2️⃣ Second line: Server Name  
+3️⃣ Third line: System Root  
+4️⃣ Fourth line: OpenSSL Configuration
+
+========================================================
+*/
+
+echo $_SERVER["DOCUMENT_ROOT"];
+echo "<br>";
+echo $_SERVER["SERVER_NAME"];
+echo "<br>";
+echo $_SERVER["SystemRoot"];
+echo "<br>";
+echo $_SERVER["OPENSSL_CONF"];
+?>
+
+<?php 
+/*
+========================================================
+  Assignment 14
+========================================================
+🎯 Task:
+Create a Multiple Lines Comment.
+Inside it, write 10 reserved keywords in PHP that  
+cannot be used as names for variables, functions, classes, etc.
+
+- class
+- function
+- if
+- else
+- echo
+- return
+- while
+- foreach
+- break
+- switch
+========================================================
+*/
+?>
+
+<?php 
+/*
+========================================================
+  Assignment 15
+========================================================
+🎯 Task:
+1. On the first line, write code that prints the **line number** where the code is written.
+2. On the second line, print the **file name** where this code is written.
+3. On the third line, print the **folder (directory) name** that contains the file.
+========================================================
+*/
+echo "<br>";
+echo __LINE__;
+echo "<br>";
+echo __FILE__;
+echo "<br>";
+echo __DIR__;
+?>
