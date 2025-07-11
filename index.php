@@ -522,3 +522,232 @@ echo __FILE__;
 echo "<br>";
 echo __DIR__;
 ?>
+
+<?php
+/*
+========================================================
+  Assignment 16
+========================================================
+🎯 Task:
+You have the following variable with:
+- A value of "10"
+- A type of String
+- It contains a numeric value inside the string
+
+✅ Your goal is:
+1. Print the number as an Integer
+2. On the next line, print its type to confirm it's an Integer
+
+🔁 Repeat this task in 3 different ways.
+
+🚀 Bonus Challenge:
+If you like to explore and go beyond the course,
+try doing the same task using 2 additional methods
+to make a total of **5 different solutions**.
+
+❗ Rules:
+- You must not change the original value of the variable
+- Use PHP features to perform the required type conversion and verification
+========================================================
+*/
+
+$a = "10";
+
+echo "<br />";
+echo (int) $a;
+echo "<br />";
+echo gettype((int) $a);
+echo "<br />";
+echo intval($a);
+echo "<br />";
+echo gettype(intval($a));
+echo "<br />";
+echo +$a;
+echo "<br />";
+echo gettype(+$a);
+echo "<br />";
+echo $a * 1;
+echo "<br />";
+echo gettype($a * 1);
+echo "<br />";
+settype($a, "integer");
+echo $a;
+echo "<br />";
+echo gettype($a);
+?>
+
+<?php
+/*
+========================================================
+  Assignment 17
+========================================================
+🎯 Task:
+Replace the question mark (?) with **one** of the **Comparison Operators** 
+so that the result is always **true**.
+
+❗ Rules:
+- You are NOT allowed to use the operator more than once.
+- The expression must always evaluate to true.
+
+========================================================
+*/
+$a = 10;
+$b = 20;
+$c = 15;
+
+echo "<br />";
+var_dump($a < $b); // True
+echo "<br />";
+var_dump($c > $a); // True
+echo "<br />";
+var_dump($a && $b); // True
+echo "<br />";
+var_dump($a || $b); // True
+echo "<br />";
+var_dump($a <= $c); // True
+echo "<br />";
+var_dump($a != $c); // True
+echo "<br />";
+var_dump(gettype($a) === gettype($b)); // True
+echo "<br />";
+var_dump(gettype($a) == gettype($b)); // True
+echo "<br />";
+var_dump(gettype((float) $a) and gettype($b)); // True
+?>
+
+<?php
+/*
+========================================================
+  Assignment 18
+========================================================
+🎯 Task:
+Use the following variables and apply what you've learned previously  
+to get the output: -1 as an Integer.
+
+❗ Rules:
+- You are NOT allowed to modify the numbers directly.
+
+✅ Required Output:
+-1
+
+========================================================
+*/
+
+$a = 10;
+$b = 20;
+
+echo $a <=> $b;
+?>
+
+<?php
+/*
+========================================================
+  Assignment 19
+========================================================
+🎯 Task:
+You are given the following variable.
+
+Your goal is to print the values as shown in the example output.
+
+💡 In the designated area, write your code to produce the correct output.
+
+❗ Rules:
+- You are NOT allowed to change the value of the variable.
+- You are NOT allowed to manually write any numbers.
+========================================================
+*/
+
+$points = 10;
+
+$points++;
+$points++;
+$points++;
+
+echo $points; // 13
+
+// Write Your Code Here
+$points--;
+$points--;
+$points--;
+$points--;
+$points--;
+
+echo "<br />";
+echo $points; // 8;
+?>
+
+<?php
+/*
+========================================================
+  Assignment 20
+========================================================
+🎯 Task:
+You are given the following variables, each containing a word  
+that together form the name: "Elzero Web School".
+
+Your goal is to create the variable `$d` that holds the full name,  
+with spaces between the words.
+
+✅ Requirements:
+- Use **concatenation** and everything you’ve learned so far.
+- Do NOT change the values of the variables.
+- You must complete the task in **4 different ways**.
+
+========================================================
+*/
+
+$a = "Elzero";
+$b = "Web";
+$c = "School";
+
+// Method One
+$d = "$a $b $c";
+echo $d;
+echo "<br />";
+
+// Method Two
+$d = $a . " " . $b . " " . $c;
+echo $d;
+echo "<br />";
+
+// Method Three
+$d = "{$a} {$b} {$c}";
+echo $d;
+echo "<br />";
+
+// Method Four
+$d = sprintf("%s %s %s", $a, $b, $c);
+echo $d;
+?>
+
+<?php
+/*
+========================================================
+  Assignment 21
+========================================================
+🎯 Task:
+All of the following code samples contain errors.
+
+✅ Your goal is to suppress the error output and instead show a custom message:  
+"Custom Error"
+
+❗ Rules:
+- Do NOT fix the actual errors.
+- Only prevent PHP from displaying the default error message.
+- Display "Custom Error" instead.
+
+💡 Hint: Use error handling techniques such as custom error handlers, try/catch (if applicable), or the error control operator (@).
+
+========================================================
+*/
+// Code 1
+// $a = @$b or die("variable Not Found");
+// echo "<br />";
+
+// Code 2
+// $f = @file("Not_A_File") or die("File Not Exist");
+// echo "<br />";
+
+// Code 3
+(@include("Not_A_File")) or die("Include File Not Found");
+?>
