@@ -751,3 +751,305 @@ All of the following code samples contain errors.
 // Code 3
 (@include("Not_A_File")) or die("Include File Not Found");
 ?>
+
+<?php
+/*
+========================================================
+  Assignment 22
+========================================================
+🎯 Task:
+You are given the variables below.
+
+✅ Your goal is to write a condition that checks the following **in a single if statement**:
+1. The variable `$b` is greater than `$a`.
+2. The variable `$a` is identical to (equal and same type as) `$c`.
+3. The sum of `$a` and `$c` is identical to `$b`.
+
+📌 If all the above conditions are true, print the word: `Yes`.
+
+========================================================
+*/
+$a = 100;
+$b = 200;
+$c = 100;
+
+if($b > $a && $a === $c && ($a + $c === $b)) {
+  echo "Yes";
+}
+?>
+
+<?php
+/*
+========================================================
+  Assignment 23
+========================================================
+🎯 Task:
+You are given the following variables below.  
+These variables may have different values across multiple test cases.
+
+✅ Your goal is to write conditional logic that does the following:
+
+1. If variable $a is greater than $b → print: “A Is Larger Than B”
+2. If variable $a is greater than $c → print: “A Is Larger Than C”
+3. If $a is **not greater than either** $b or $c → print:  
+   “A Is Not Larger Than B Or C”
+
+🧪 Test cases will change the values of $a, $b, and $c —  
+   your logic must work for all of them.
+
+========================================================
+*/
+// Test Case 1
+// $a = 100;
+// $b = 200;
+// $c = 300;
+
+// if($a < $b || $a < $c) {
+//   echo "A Is Not Larger Than B Or C";
+// }
+
+// Test Case 2
+// $a = 200;
+// $b = 100;
+// $c = 300;
+
+// if($a > $b) {
+//   echo "A Is Larger Than B";
+// }
+
+// Test Case 3
+// $a = 200;
+// $b = 200;
+// $c = 100;
+
+// if($a > $c) {
+//   echo "A Is Larger Than c";
+// }
+?>
+
+<?php
+/*
+========================================================
+  Assignment 24
+========================================================
+🎯 Task:
+You are given a form that submits data to the **same page**.
+
+✅ Your task is to:
+1. Check if the request method is POST (not GET).
+2. If it's POST, print:
+   → "Hello" followed by the submitted username.
+
+3. You are also given an array of admin usernames.
+4. Add a condition **inside the POST check** to determine whether
+   the submitted username exists in the admin array.
+
+5. If it is an admin name, print:
+   → "This Username {Username} Is Admin"
+
+❗ Notes:
+- Do not print anything if the request is GET.
+- Use built-in PHP functions and good practices.
+
+========================================================
+*/
+
+$admins = ["Osama", "Ahmed", "Sayed"];
+
+if($_SERVER["REQUEST_METHOD"] === "POST") {
+  echo "The Request Method Is Post And Username Is " . $_POST["user"] . "<br />";
+  if(in_array($_POST["user"], $admins)) {
+    echo "This Username {$_POST['user']} Is Admin";
+  }
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" method="POST">
+    <input type="text" name="user">
+    <input type="submit" value="Send">
+  </form>
+</body>
+</html>
+
+<?php
+/*
+========================================================
+  Assignment 25
+========================================================
+🎯 Challenge Task:
+
+You are given a set of conditional statements.  
+Your goal is to simplify them using the **Ternary Operator**.
+
+✅ Requirements:
+- Rewrite the conditions using the ternary operator.
+- The result must be written in **a single line**.
+- Output should remain correct.
+========================================================
+*/
+
+$a = 30;
+$b = 20;
+$c = 10;
+
+echo ($a + $b === $c) ? "A + B = C" : (($a + $c === $b) ? "A + C = B" : (($b + $c === $a) ? "B + C = A" : "The End"));
+?>
+
+<?php
+/*
+========================================================
+  Assignment 26
+========================================================
+🎯 Task:
+You are given multiple `if` conditions.
+
+✅ Your goal is to:
+- Combine all the conditions into **a single line**.
+- Use logical operators (e.g., `&&`, `||`) to join them.
+- Output the appropriate message if all conditions are true.
+
+❗ Rules:
+- Only one line of code is allowed.
+- No multiple `if` statements.
+
+========================================================
+*/
+
+$name = "Osama";
+$age = 40;
+$country = "Egypt";
+
+($age > 18) && print("The Age Is Good To Go<br>");
+(gettype($name) === "string") && print("The Name Is Good To Go<br>");
+($country === "Egypt") && print("The Country Is Good To Go<br>");
+?>
+
+<?php
+/*
+========================================================
+  Assignment 27
+========================================================
+🎯 Task:
+You are given a set of conditions written using `if` or `else if`.
+
+✅ Your task is to:
+- Recreate the same logic using a `switch` statement instead.
+- Ensure the same outputs are printed based on the condition value.
+
+❗ Notes:
+- Each case in the `switch` must represent one condition.
+- Use `default` for the fallback result.
+
+========================================================
+*/
+
+$genre = "Hack And Slash";
+
+switch($genre) {
+  case "RPG":
+    echo "I Recommend Ys Games";
+    break;
+  case "Hack And Slash":
+    echo "I Recommend Castlevania Games";
+    break;
+  case "FPS":
+    echo "I Recommend Uncharted Games";
+    break;
+  case "Platform":
+    echo "I Recommend Megaman Games";
+    break;
+  case "Puzzle":
+    echo "I Recommend Megaman Games";
+    break;
+  default: 
+    echo "I Recommend Shadow Of Mordor And Shadow Of War";
+}
+?>
+
+<?php
+/*
+========================================================
+  Assignment 28
+========================================================
+🎯 Task:
+You are given two numeric variables and one variable representing a mathematical operator.
+
+✅ The operator can be one of the following:
+  +  → addition  
+  -  → subtraction  
+  *  → multiplication  
+  /  → division
+
+✅ Your goal:
+- Perform the corresponding operation between the two numbers.
+- If the operator is **not one of the 4**, print: "Unknown Operation".
+- If the operator is `/` (division), print:
+   1. The integer result (no decimals)
+   2. The remainder on a new line (i.e., using the modulus `%`)
+
+🧪 Test Cases:
+$op = "+"  → Output: result of addition  
+$op = "/"  → Output: division result on line 1, remainder on line 2  
+$op = "#"  → Output: "Unknown Operation"
+
+========================================================
+*/
+
+$num_one = 23;
+$num_two = 5;
+$op = "/";
+
+if($op === "+") {
+  echo $num_one + $num_two;
+} else if($op === "-") {
+  echo $num_one - $num_two;
+} else if($op === "/") {
+  echo (int)($num_one / $num_two);
+  echo "<br / >";
+  echo $num_one % $num_two;
+} else if($op === "*") {
+  echo $num_one * $num_two;
+} else {
+  echo "Unknown Operation";
+}
+?>
+
+<?php
+/*
+========================================================
+  Assignment 29
+========================================================
+🎯 Task:
+You are given a block of code written using a `switch` statement.
+
+✅ Your task is to:
+- Recreate the exact same logic using `if`, `elseif`, and `else` statements.
+
+❗ Notes:
+- The output should be identical.
+- Only the structure (control flow) changes — from `switch` to `if`.
+
+========================================================
+*/
+
+$day = "Sat";
+
+if($day === "Sat" || $day === "Sun" || $day === "Mon") {
+  echo "We Are Open All The Day";
+} else if ($day === "Tue" || $day === "Wed") {
+  echo "We Are Open From 08:12";
+} else if ($day === "Thu" || $day === "Fri") {
+  echo "We Are Closed";
+} else {
+  echo "Unknown Day";
+}
+?>
